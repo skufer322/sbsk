@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -16,17 +17,25 @@ public class GreetingController {
     private final PersonService personService;
 
     @GetMapping("/greeting")
-    public String getStandardGreeting(){
+    public String getStandardGreeting() {
         return "Hello World!";
     }
 
     @GetMapping("greeting/{custom}")
-    public String getParameterizedGreeting(@PathVariable final String custom){
+    public String getParameterizedGreeting(@PathVariable final String custom) {
         return "Hello, customized greeting: [" + custom + "]";
     }
 
     @GetMapping("/persons")
-    public List<Person> getPersons(){
+    public List<Person> getPersons() {
         return personService.getPersons();
+    }
+
+    @GetMapping("/greeting/principal")
+    public String getPrincipalGreeting(final Principal principal) {
+        String principalName = (principal == null
+                ? "Anonymous"
+                : principal.getName());
+        return "Hello, " + principalName + "!";
     }
 }
