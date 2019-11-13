@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:lang="${#locale.language}">
+<head>
+    <meta charset="utf-8"/>
+    <title>Default Page for SK's Spring Boot 2 project</title>
+</head>
+
+<body>
+<h2>Welcome to the landing page of SK's Spring Boot 2 project</h2>
+
+<h3>You have the following options:</h3>
+<ul>
+    <li>Access some person-related greetings (REST API)
+        <ul>
+            <li>getStandardGreeting: <a href="http://localhost:8080/greeting">http://localhost:8080/greeting</a></li>
+            <li>getParameterizedGreeting: <a href="http://localhost:8080/greeting/test123">http://localhost:8080/greeting/test123</a>
+            </li>
+            <li>getPersons: <a href="http://localhost:8080/persons">http://localhost:8080/persons</a></li>
+            <li>getPrincipal: <a href="http://localhost:8080/greeting/principal">http://localhost:8080/greeting/principal</a>
+            </li>
+        </ul>
+    </li>
+    <li>Access the author API
+        <ul>
+            <li>getAuthors: <a href="http://localhost:8080/authors">http://localhost:8080/authors</a></li>
+            <li>getAuthor_1: <a href="http://localhost:8080/authors/1">http://localhost:8080/authors/1</a></li>
+            <li>getAuthor_Error: <a href="http://localhost:8080/authors/2147483647">http://localhost:8080/authors/2147483647</a>
+            </li>
+        </ul>
+    </li>
+    <li></li>
+    <li></li>
+</ul>
+</body>

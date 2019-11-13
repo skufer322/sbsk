@@ -21,7 +21,7 @@ public class GreetingController {
         return "Hello World!";
     }
 
-    @GetMapping("greeting/{custom}")
+    @GetMapping("/greeting/{custom}")
     public String getParameterizedGreeting(@PathVariable final String custom) {
         return "Hello, customized greeting: [" + custom + "]";
     }
