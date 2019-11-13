@@ -11,7 +11,7 @@ public class StaticResourceAccessConfiguration implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/files/**")
-                .addResourceLocations("file:src/main/resources/static/"); // file: = relativer pfad, funktioniert
+                .addResourceLocations("file:src/main/resources/static/", "file:src/main/resources/public/"); // file: = relativer pfad, funktioniert
 //                .addResourceLocations("file:///C:/Users/stefan.kufer/IdeaProjects/sbsk/src/main/resources/static/"); // file:/// = absoluter pfad, funktioniert
     }
 }

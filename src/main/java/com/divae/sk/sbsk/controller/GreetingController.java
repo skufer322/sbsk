@@ -38,5 +38,4 @@ public class GreetingController {
                 : principal.getName());
         return "Hello, " + principalName + "!";
     }
-
 }
