@@ -27,9 +27,4 @@ class BookViewControllerTest extends SbskApplicationTests {
                         + "1;Hyperion;1600\n"
                         + "2;Der Algebraist;800\n"));
     }
-
-    @Test
-    void error() {
-        assertThat(true, is(false));
-    }
 }
