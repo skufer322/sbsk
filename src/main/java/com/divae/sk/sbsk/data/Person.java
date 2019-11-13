@@ -7,6 +7,8 @@ import lombok.Data;
 @Builder(toBuilder = true)
 public class Person {
 
+    // @formatter:off
     private String firstName;
     private String lastName;
+    // @formatter:on
 }
