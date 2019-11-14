@@ -1,4 +1,4 @@
-package com.divae.sk.sbsk.exceptionhandling;
+package com.divae.sk.sbsk.error.exceptionhandling;
 
 import com.divae.sk.sbsk.author.AuthorNotFoundException;
 import com.divae.sk.sbsk.book.restapi.BookNotFoundException;
