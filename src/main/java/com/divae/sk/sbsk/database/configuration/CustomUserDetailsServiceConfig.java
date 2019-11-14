@@ -4,6 +4,7 @@ import com.divae.sk.sbsk.database.UserEntity;
 import com.divae.sk.sbsk.database.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
  * -> remove it: https://developer.okta.com/blog/2018/10/05/build-a-spring-boot-app-with-user-authentication
  */
 @Configuration
+@Profile("!test")
 public class CustomUserDetailsServiceConfig {
 
     @Bean
