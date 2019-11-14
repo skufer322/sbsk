@@ -9,7 +9,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class NonExistingUrlErrorController implements ErrorController {
+public class BrowserRelatedErrorsController implements ErrorController {
 
     @RequestMapping("/error")
     public String handleError(HttpServletRequest request){
@@ -18,6 +18,10 @@ public class NonExistingUrlErrorController implements ErrorController {
 
         if (status != null){
             int statusCode = Integer.parseInt(status.toString());
+
+            if (statusCode == HttpStatus.FORBIDDEN.value()){
+                return "errorpages/error-403";
+            }
 
             if (statusCode == HttpStatus.NOT_FOUND.value()){
                 return "errorpages/error-404";
