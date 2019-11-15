@@ -52,9 +52,10 @@ public class GreetingController {
     }
 
     @GetMapping("/greeting/filtered")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @PostFilter("filterObject.contains(authentication.name)")
     public List<String> getFilteredGreeting() {
-        return Stream.of("Hello user", "Hello Admin", "user, merkel, trump").collect(Collectors.toList());
+        return Stream.of("Hello user", "Hello Admin", "user, merkel, trump", "FR and SK").collect(Collectors.toList());
     }
 
     @GetMapping("/greeting/userdetails")
